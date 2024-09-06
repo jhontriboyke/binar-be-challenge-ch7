@@ -5,6 +5,8 @@ const cors = require("cors");
 const { Server } = require("socket.io");
 require("dotenv").config();
 require("./config/mongodb").connect();
+require("./config/instrument");
+const Sentry = require("@sentry/node");
 
 app.use(express.json());
 const server = http.createServer(app);
@@ -90,6 +92,8 @@ const AUTH_ROUTES = require("./routes/auth.route");
 const USER_ROUTES = require("./routes/user.route");
 app.use("/auth", AUTH_ROUTES);
 app.use("/user", USER_ROUTES);
+
+Sentry.setupExpressErrorHandler(app);
 
 const PORT = process.env.PORT || 8001;
 server.listen(PORT, () => {
