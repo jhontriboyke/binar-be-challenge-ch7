@@ -16,6 +16,7 @@ This application is built using the following technologies:
 - React Query (TanStack Query)
 - Tailwind CSS
 - Formik
+- socket.io-client
 
 ### Backend:
 
@@ -23,6 +24,7 @@ This application is built using the following technologies:
 - Mongoose (MongoDB ODM)
 - Socket.io
 - JWT (JSON Web Tokens)
+- Nodemailer
 
 ### Database:
 
